@@ -1,0 +1,380 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Zen+Kurenaido&display=swap");
+
+/*
+font-family: 'Major Mono Display', monospace;
+font-family: 'Zen Kurenaido', sans-serif;
+ */
+
+:root {
+  --mainFont: "Zen Kurenaido", sans-serif;
+  --headerFont: "Major Mono Display", monospace;
+  --bgColor: rgb(39, 40, 43);
+  --bgLight: rgb(75, 72, 72);
+  --bgDark: rgb(24, 24, 26);
+  --mainColor: rgb(54, 76, 179);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bgColor);
+}
+
+h1,
+h2 {
+  font-family: var(--headerFont);
+  font-size: 1.5rem;
+  grid-column: 1 / -1;
+  color: #fff;
+}
+h2 {
+  text-align: center;
+  position: relative;
+}
+
+h2:after {
+  bottom: -1rem;
+  left: 10%;
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  background: var(--mainColor);
+}
+
+header {
+  height: 3rem;
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+  color: #fff;
+  background-color: var(--bgDark);
+}
+
+main {
+  padding: 4rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 2rem;
+}
+
+main section {
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* loaders */
+
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-1 {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: solid 5px var(--bgLight);
+  border-top: solid 5px var(--mainColor);
+  animation: loaderSpin 2s linear infinite;
+}
+
+.loader-2 {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: solid 5px var(--bgLight);
+  border-top: solid 5px var(--bgColor);
+  animation: loaderSpin 2s linear infinite;
+}
+
+.loader-3 {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: solid 8px var(--mainColor);
+  border-top: solid 8px var(--bgColor);
+  animation: loaderSpin 2s linear infinite;
+  position: relative;
+}
+
+.loader-3:after {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: solid 8px var(--mainColor);
+  border-top: solid 8px var(--bgColor);
+  animation: loaderSpin 1s linear reverse infinite;
+  position: absolute;
+  content: "";
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.loader-4 div {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: loader-4 1.6s ease-in-out alternate infinite;
+}
+
+.loader-4 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+}
+
+.loader-4 div:first-child {
+  animation-delay: -0.32s;
+}
+
+.loader-4 div:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loader-4 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loader-5 div {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: loader-5 1s ease-in-out alternate infinite;
+}
+
+.loader-5 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+}
+
+.loader-5 div:first-child {
+  animation-delay: -0.5s;
+}
+
+.loader-5 div:nth-child(2) {
+  animation-delay: -0.25s;
+}
+
+@keyframes loader-5 {
+  0% {
+    transform: translateY(-1em);
+  }
+  100% {
+    transform: translateY(1rem);
+  }
+}
+
+.loader-6 {
+  width: 10rem;
+  height: 1rem;
+  background: var(--bgLight);
+  position: relative;
+  border-radius: 3rem;
+  overflow: hidden;
+}
+
+.loader-6:after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  background: var(--mainColor);
+  animation: loader-6 5s ease-in-out infinite;
+}
+
+@keyframes loader-6 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loader-7 {
+  width: 10rem;
+  height: 1rem;
+  position: relative;
+  border-radius: 3rem;
+  overflow: hidden;
+  border: solid 1px var(--bgLight);
+}
+
+.loader-7:after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  background: var(--mainColor);
+  animation: loader-7 2s ease-in infinite;
+  top: 0%;
+  transform-origin: left;
+}
+
+@keyframes loader-7 {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  51% {
+    transform-origin: right;
+  }
+  90% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+.loader-8 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-8 div {
+  display: block;
+  width: 0.5rem;
+  height: 3rem;
+  background-color: var(--mainColor);
+  border-radius: 2rem;
+  animation: loader-8 2s ease-in-out alternate infinite;
+}
+
+@keyframes loader-8 {
+  0% {
+    height: 1rem;
+  }
+  100% {
+    height: 4rem;
+  }
+}
+
+.loader-8 div:nth-child(1) {
+  animation-delay: -0.5s;
+}
+.loader-8 div:nth-child(2) {
+  animation-delay: -0.25s;
+}
+.loader-8 div:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.loader-8 div:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.loader-9 {
+  font-family: var(--headerFont);
+  color: #fff;
+  font-size: 2rem;
+  position: relative;
+}
+
+.loader-9:after {
+  content: ".";
+  position: absolute;
+  right: -2rem;
+  animation: loader-9 1s ease-in-out infinite;
+}
+.loader-9:before {
+  content: ".";
+  position: absolute;
+  right: -1rem;
+  animation: loader-9 1s ease-in-out infinite;
+  animation-delay: -0.25s;
+}
+
+@keyframes loader-9 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loader-10 {
+  content: "";
+  font-family: var(--headerFont);
+  color: rgba(255, 255, 255, 0);
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.loader-10:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  content: "";
+  animation: loader-10 4s ease-in-out infinite;
+}
+
+@keyframes loader-10 {
+  0% {
+    content: "l";
+  }
+  10% {
+    content: "lo";
+  }
+  20% {
+    content: "loa";
+  }
+  30% {
+    content: "load";
+  }
+  40% {
+    content: "loadi";
+  }
+  50% {
+    content: "loadin";
+  }
+  60% {
+    content: "loading";
+  }
+  70% {
+    content: "loading.";
+  }
+  80% {
+    content: "loading..";
+  }
+  90%,
+  100% {
+    content: "loading...";
+  }
+}
