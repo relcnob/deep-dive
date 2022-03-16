@@ -1,5 +1,5 @@
 /* fonts */
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Zen+Kurenaido&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 /*
 font-family: 'Major Mono Display', monospace;
@@ -7,12 +7,13 @@ font-family: 'Zen Kurenaido', sans-serif;
  */
 
 :root {
-  --mainFont: "Zen Kurenaido", sans-serif;
+  --mainFont: "Quicksand", sans-serif;
   --headerFont: "Major Mono Display", monospace;
   --bgColor: rgb(39, 40, 43);
   --bgLight: rgb(75, 72, 72);
   --bgDark: rgb(24, 24, 26);
   --mainColor: rgb(54, 76, 179);
+  --mainColorDark: rgb(46, 31, 131);
 }
 
 * {
@@ -377,4 +378,257 @@ main section {
   100% {
     content: "loading...";
   }
+}
+
+/* buttons */
+
+button {
+  font-family: var(--mainFont);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background: var(--mainColor);
+  padding: 1rem 2rem;
+  display: flex;
+  color: #fff;
+  border-radius: 0.5rem;
+  transition: 0.3s ease-in-out;
+  position: relative;
+}
+
+.btn-1 {
+  border: 2px solid var(--mainColor);
+}
+
+.btn-1:hover {
+  background-color: var(--mainColorDark);
+  border: 2px solid var(--mainColorDark);
+}
+
+.btn-2:after {
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  top: -3px;
+  left: -3px;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #fff;
+  border-radius: 0.6rem;
+  transform: scaleX(0);
+  transition: 0.5s ease-in-out;
+}
+
+.btn-2:hover:after {
+  transform: scaleX(1);
+}
+
+.btn-2:after:active {
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  top: -3px;
+  left: -3px;
+  content: "";
+  position: absolute;
+  z-index: -100;
+  background: #fff;
+  border-radius: 0.6rem;
+  transition: 0.5s ease-in-out;
+}
+
+.btn-3 {
+  border: solid 2px var(--mainColor);
+}
+
+.btn-3:hover {
+  background-color: var(--bgColor);
+  border: solid 2px var(--mainColor);
+  color: var(--mainColor);
+}
+
+.btn-4:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0rem 2rem -1rem rgba(255, 255, 255, 0.507);
+}
+
+.btn-5 {
+  background: transparent;
+  overflow: hidden;
+}
+
+.btn-5:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--mainColor);
+  content: "";
+  z-index: -2;
+}
+
+.btn-5:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #fff;
+  content: "";
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-5:hover {
+  color: var(--mainColor);
+}
+
+.btn-5:hover:after {
+  height: 100%;
+}
+
+.btn-6 {
+  background: var(--bgColor);
+}
+
+.btn-6:before {
+  position: absolute;
+  content: "";
+  top: -3px;
+  left: -3px;
+  height: calc(100% + 6px);
+  width: calc(100% + 6px);
+  background: linear-gradient(
+    270deg,
+    #ffd631,
+    #ff9d3b,
+    #ff5950,
+    #9e4bec,
+    #6192fd,
+    #5becff,
+    #7bffa9
+  );
+  background-size: 500% 500%;
+  z-index: -1;
+  border-radius: 0.6rem;
+}
+
+.btn-6:hover:before {
+  background: linear-gradient(
+    270deg,
+    #ffd631,
+    #ff9d3b,
+    #ff5950,
+    #9e4bec,
+    #6192fd,
+    #5becff,
+    #7bffa9
+  );
+  background-size: 500% 500%;
+  animation: btn-6 2s linear alternate infinite;
+}
+@keyframes btn-6 {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.btn-7 {
+  border-radius: 0;
+  background-color: transparent;
+  transition: 0.3s 0.4s;
+  color: #fff;
+}
+
+.btn-7:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  transform-origin: left;
+  transition: 0.3s ease-in;
+  transform: scaleX(0);
+  z-index: -2;
+  box-sizing: border-box;
+}
+.btn-7:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: right;
+  transition: 0.3s 0.3s ease-in;
+  background: #fff;
+  transform: scaleX(0);
+  z-index: -1;
+}
+.btn-7:hover {
+  color: var(--bgDark);
+}
+
+.btn-7:hover::before {
+  transform: scaleX(1);
+}
+.btn-7:hover::after {
+  transform: scaleX(1);
+}
+
+.btn-8:active {
+  transition: 0.05s ease-in-out;
+  background: var(--mainColorDark);
+}
+
+.btn-8:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 0.5rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 0.5rem 2rem var(--bgLight);
+}
+.btn-8:active::before {
+  box-shadow: 0 0 0 0 var(--bgLight);
+  position: absolute;
+  border-radius: 0.5rem;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.btn-9 {
+  transition: 0.3s ease-in-out;
+}
+
+.btn-9:active {
+  transform: scale(0.95);
+  background: var(--mainColorDark);
+  transition: 0.05s ease-in-out;
+}
+
+.btn-10 {
+  transition: 0.3s ease-in-out;
+}
+
+.btn-10:active {
+  transform: rotate(5deg);
+  background: var(--mainColorDark);
+  transition: 0.05s ease-in-out;
 }
