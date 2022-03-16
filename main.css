@@ -1,0 +1,12 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Zen+Kurenaido&display=swap");
+
+/*
+font-family: 'Major Mono Display', monospace;
+font-family: 'Zen Kurenaido', sans-serif;
+ */
+
+:root {
+  --mainFont: "Zen Kurenaido", sans-serif;
+  --headerFont: "Major Mono Display", monospace;
+}
