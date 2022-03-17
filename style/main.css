@@ -11,7 +11,7 @@ font-family: 'Zen Kurenaido', sans-serif;
   --headerFont: "Major Mono Display", monospace;
   --bgColor: rgb(39, 40, 43);
   --bgLight: rgb(75, 72, 72);
-  --bgDark: rgb(24, 24, 26);
+  --bgDark: rgb(18, 18, 19);
   --mainColor: rgb(54, 76, 179);
   --mainColorDark: rgb(46, 31, 131);
 }
@@ -631,4 +631,174 @@ button {
   transform: rotate(5deg);
   background: var(--mainColorDark);
   transition: 0.05s ease-in-out;
+}
+
+a {
+  display: block;
+  color: #fff;
+  font-family: var(--mainFont);
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  position: relative;
+}
+.link-1 {
+  transition: 0.3s ease-in-out;
+}
+
+.link-1:hover {
+  color: var(--mainColor);
+}
+
+.link-2:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--mainColor);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.link-2:hover:after {
+  transform: scaleX(1);
+}
+
+.link-3:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--mainColor);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+}
+
+.link-3:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.link-4 {
+  transition: 0.5s ease-in-out;
+}
+
+.link-4:hover {
+  letter-spacing: 4px;
+}
+
+.link-5 {
+  transition: 0.5s ease-in-out;
+}
+
+.link-5:hover {
+  transform: scale(1.15);
+}
+
+.link-6 {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s ease-in-out 0.2s;
+}
+.link-6:hover {
+  color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.link-6:after {
+  transition: 0.5s ease-in-out 0s;
+  content: "Nice";
+  position: absolute;
+  top: -20px;
+  color: transparent;
+}
+
+.link-6:hover:after {
+  content: "Nice";
+  position: absolute;
+  top: 0;
+  color: #fff;
+  transition: 0.5s cubic-bezier(0.69, -0.35, 0.35, 1.4) 0s;
+}
+
+.link-7 {
+}
+
+.link-7:after {
+  background: var(--mainColor);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 3rem;
+  position: absolute;
+  content: "";
+  left: -1rem;
+  top: 0;
+  z-index: -1;
+  transition: 0.5s cubic-bezier(0.69, -0.35, 0.35, 1.4) 0s;
+}
+
+.link-7:hover:after {
+  width: calc(100% + 2rem);
+}
+
+.link-8 {
+  display: block;
+  transition: 0.5s cubic-bezier(0.69, -0.35, 0.35, 1.4);
+}
+
+.link-8:hover {
+  transform: translate(-0.3rem, -0.3rem);
+}
+
+.link-8:before {
+  top: 0;
+  left: 0;
+  content: "Hover me";
+  color: var(--bgDark);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  transition: 0.5s cubic-bezier(0.69, -0.35, 0.35, 1.4);
+  text-shadow: 0 0 2px var(--bgDark);
+}
+.link-8:hover::before {
+  transform: translate(0.3rem, 0.3rem);
+}
+
+.link-9 {
+  transform-origin: center;
+  transition: 0.5s;
+}
+
+.link-9:hover {
+  transition: 0.5s;
+  transform: skewX(-10deg) rotate(5deg);
+  text-shadow: 4px 4px 2px var(--bgDark);
+}
+
+.link-10:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--mainColor);
+  bottom: -4px;
+  left: 0;
+  transition: 0.5s cubic-bezier(0.69, -0.35, 0.35, 1.4);
+  transform-origin: bottom;
+  z-index: -1;
+}
+
+.link-10:hover::before {
+  transform: translateX(-4px);
+  height: calc(100% + 4px);
+  width: calc(100% + 8px);
 }
